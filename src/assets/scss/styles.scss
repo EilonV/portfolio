@@ -1,0 +1,16 @@
+// SETUP
+@import 'setup/_variables';
+@import 'setup/mixins.scss';
+
+// BASICS
+@import 'basics/base';
+@import 'basics/layout';
+@import 'basics/helpers';
+
+// FONTS
+@import 'setup/fonts';
+
+// CMPS
+
+// PAGES
+@import 'views/_home.scss';
