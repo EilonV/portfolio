@@ -13,7 +13,6 @@ export const Home = () => {
         console.log('results', result)
 
         if (result.destination) {
-            if()
 
             // i know eval is harmful, yet this is a personal static website
             let deleted = eval(result.source.droppableId).splice([result.source.index], 1)

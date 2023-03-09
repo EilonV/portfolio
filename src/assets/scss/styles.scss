@@ -1,14 +1,14 @@
 // SETUP
 @import 'setup/_variables';
-@import 'setup/mixins.scss';
+@import 'setup/_mixins.scss';
 
 // BASICS
-@import 'basics/base';
-@import 'basics/layout';
-@import 'basics/helpers';
+@import 'basics/_base';
+@import 'basics/_layout';
+@import 'basics/_helpers';
 
 // FONTS
-@import 'setup/fonts';
+@import 'setup/_fonts';
 
 // CMPS
 
