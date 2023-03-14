@@ -10,7 +10,13 @@
 // FONTS
 @import 'setup/_fonts';
 
+// BACKGROUNDS
+@import 'bgs/bg.scss';
+
 // CMPS
+@import 'components/_test.scss';
+@import 'components/_test2.scss';
+@import 'components/_test3.scss';
 
 // PAGES
 @import 'views/_home.scss';

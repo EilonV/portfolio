@@ -1,10 +1,21 @@
 import { createSlice } from '@reduxjs/toolkit'
+import { Test } from "../components/test"
+import { Test2 } from "../components/test2"
+import { Test3 } from "../components/test3"
 
 const initialState = {
     list: [
         {
             id: 'Zhg453sG',
             name: 'Eilon',
+            age: '27'
+        },
+
+    ],
+    list2: [
+        {
+            id: '123',
+            name: 'DONK',
             age: '27'
         },
         {
@@ -16,13 +27,6 @@ const initialState = {
             id: 'LHs865ZX',
             name: 'Luna',
             age: '1'
-        },
-    ],
-    list2: [
-        {
-            id: '123',
-            name: 'DONK',
-            age: '27'
         }
     ]
 }

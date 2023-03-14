@@ -3,6 +3,7 @@
     // padding: 10px;
     background-color: $brown;
     transition: 0.5s;
+    user-select: none;
 
     .main-container {
         margin: 50px;
@@ -12,14 +13,14 @@
         height: 50px;
         text-align: center;
         background-color: $white;
-        font-size: 24px;
+        font-size: 40px;
         white-space: pre-wrap;
     }
 
     .person {
 
-        &:not(:first-child) {
-            margin: 5px 0;
+        &:not(:last-child) {
+            margin-bottom: 5px;
         }
 
         p {
@@ -28,11 +29,47 @@
             justify-content: center;
             align-items: center;
             border-radius: 33px;
+            color: $white;
             box-shadow:
                 2px 2px 7px rgba(0, 0, 0, 0.2),
                 31px 31px 55px rgba(0, 0, 0, 0.02);
+            animation: animatedBG 7s infinite forwards ease-in-out;
+            background-color: #9367ff;
+            background-image: $bg;
+
+            &:hover {
+                animation: bgSize 0.5s 1 forwards ease-in-out;
+            }
+
         }
 
+        p::after {
+            font-size: 5px !important;
+        }
+
+        @keyframes bgSize {
+            from {
+                background-size: 100%;
+            }
+
+            to {
+                background-size: 90%;
+            }
+        }
+
+        @keyframes animatedBG {
+            0% {
+                background-position: 0 0;
+            }
+
+            50% {
+                background-position: 70% 0;
+            }
+
+            100% {
+                background-position: 0 0;
+            }
+        }
     }
 
     .dragging-zone {
@@ -72,4 +109,7 @@
         }
 
     }
+
+
+
 }
