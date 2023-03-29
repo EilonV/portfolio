@@ -1,0 +1,75 @@
+// About class
+@keyframes bgSize {
+    from {
+        background-size: 100%;
+    }
+
+    to {
+        background-size: 80%;
+    }
+}
+
+@keyframes waveRight {
+    from {
+        background-position-x: 0em;
+    }
+
+    to {
+        background-position-x: 3em;
+    }
+}
+
+//Projects class
+@keyframes diagonalUp {
+    from {
+        background-position-x: 0em;
+        background-position-y: 0em;
+    }
+
+    to {
+        background-position-x: 3em;
+        background-position-y: -3em;
+    }
+}
+
+//Skills class
+@keyframes float {
+    // 0% {
+    //     background-position-y: 0em;
+    //     background-position-x: 0em;
+
+    // }
+
+    // 50% {
+    //     background-position-x: -1.5em;
+
+    // }
+
+    // 100% {
+    //     background-position-y: -3em;
+    //     background-position-x: 0em;
+
+    // }
+
+    from {
+        background-position-y: 0em;
+    }
+
+    to {
+        background-position-y: -3em;
+    }
+}
+
+//Contact class
+@keyframes diagonalDown {
+
+    from {
+        background-position-x: 0em;
+        background-position-y: 0em;
+    }
+
+    to {
+        background-position-x: -3em;
+        background-position-y: 3em;
+    }
+}

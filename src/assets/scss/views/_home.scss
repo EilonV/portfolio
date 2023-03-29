@@ -1,115 +1,158 @@
 .home {
-    height: 100vh;
-    // padding: 10px;
-    background-color: $brown;
-    transition: 0.5s;
+    background: $white;
     user-select: none;
+    margin-bottom: 20px;
 
-    .main-container {
-        margin: 50px;
-    }
-
-    p {
-        height: 50px;
-        text-align: center;
+    .item {
         background-color: $white;
-        font-size: 40px;
-        white-space: pre-wrap;
+        height: 100%;
+        min-height: 150px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 33px;
+        box-shadow:
+            2px 2px 7px rgba(0, 0, 0, 0.2),
+            31px 31px 55px rgba(0, 0, 0, 0.02);
+
+        // animation: animatedBG 10s infinite forwards ease-in-out;
+
+        h1 {
+            text-align: center;
+            font-size: 40px;
+            font-weight: 700;
+            color: $black;
+            background: white;
+            padding: 20px;
+            border-radius: 24px;
+        }
+        // p {
+        //     text-align: center;
+        //     font-size: 40px;
+        //     font-weight: 700;
+        //     color: $black;
+        //     background: white;
+        //     padding: 10px;
+        //     border-radius: 24px;
+        // }
+
+        &.about {
+            background-position-x: 0%;
+            background: linear-gradient(45deg, #ffffff 25%, transparent 25%), linear-gradient(315deg, #ffffff 25%, transparent 25%), linear-gradient(45deg, transparent 24%, #ff006e 25%, #ff006e 45%, transparent 45%), linear-gradient(315deg, transparent 24%, #ff006e 25%, #ff006e 45%, transparent 45%);
+            background-size: 3em 3em;
+            background-color: #ffffff;
+            animation: waveRight 4s infinite linear;
+        }
+
+        &.skills {
+            background: radial-gradient(circle, #fb5607 10%, transparent 11%), radial-gradient(circle at bottom left, #fb5607 5%, transparent 6%), radial-gradient(circle at bottom right, #fb5607 5%, transparent 6%), radial-gradient(circle at top left, #fb5607 5%, transparent 6%), radial-gradient(circle at top right, #fb5607 5%, transparent 6%);
+            background-size: 3em 3em;
+            background-color: #ffffff;
+            animation: float 4s infinite linear;
+        }
+
+        &.projects {
+            background: radial-gradient(circle at top left, transparent 25%, #ffbe0b 25.5%, #ffbe0b 36%, transparent 37%, transparent 100%), radial-gradient(circle at bottom right, transparent 34%, #ffbe0b 34.5%, #ffbe0b 45.5%, transparent 46%, transparent 100%);
+            background-size: 3em 3em;
+            background-color: #ffffff;
+            animation: diagonalUp 4s infinite linear;
+        }
+
+        &.contact {
+            background: radial-gradient(circle at 60% 40%, #8338ec 25%, transparent 26%), radial-gradient(circle at 40% 60%, #8338ec80 25%, transparent 26%);
+            background-size: 3em 3em;
+            background-color: #ffffff;
+            animation: diagonalDown 4s infinite linear;
+        }
+
     }
 
-    .person {
+    .dnd-container {
+        gap: 30px;
+    }
 
-        &:not(:last-child) {
-            margin-bottom: 5px;
-        }
-
-        p {
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 33px;
-            color: $white;
-            box-shadow:
-                2px 2px 7px rgba(0, 0, 0, 0.2),
-                31px 31px 55px rgba(0, 0, 0, 0.02);
-            animation: animatedBG 7s infinite forwards ease-in-out;
-            background-color: #9367ff;
-            background-image: $bg;
-
-            &:hover {
-                animation: bgSize 0.5s 1 forwards ease-in-out;
-            }
-
-        }
-
-        p::after {
-            font-size: 5px !important;
-        }
-
-        @keyframes bgSize {
-            from {
-                background-size: 100%;
-            }
-
-            to {
-                background-size: 90%;
-            }
-        }
-
-        @keyframes animatedBG {
-            0% {
-                background-position: 0 0;
-            }
-
-            50% {
-                background-position: 70% 0;
-            }
-
-            100% {
-                background-position: 0 0;
-            }
-        }
+    .dragging-zone,
+    .drop-zone {
+        padding: 40px;
     }
 
     .dragging-zone {
         width: 100%;
         border-radius: 33px;
-        background: #e8b478;
-        box-shadow: inset 29px 29px 58px #d1a26c,
-            inset -29px -29px 58px #ffc684;
-        padding: 50px;
-        transition: 0.5s;
-
+        background: $white;
+        box-shadow: inset 19px 19px 38px #e0e0e0,
+            inset -19px -19px 38px #ffffff;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        gap: 10px;
 
-        .person {
-            height: 100%;
-
+        h1 {
+            box-shadow: 0px 0px 10px 5px #8b8b8b27;
+            padding: 20px;
         }
+
     }
 
     .drop-zone {
         width: 100%;
-        margin-right: 50px;
         display: flex;
         flex-direction: column;
-        // justify-content: space-between;
         border-radius: 33px;
-        background: #e8b478;
-        box-shadow: inset 29px 29px 58px #d1a26c,
-            inset -29px -29px 58px #ffc684;
-        padding: 50px;
+        background: $white;
+        box-shadow: inset 19px 19px 38px #e0e0e0,
+            inset -19px -19px 38px #ffffff;
         transition: 0.5s;
 
-        .person {
-            height: 100%;
+        .skills,
+        .about,
+        .projects,
+        .contact {
+            h1{
+                text-align: left;
+                padding-left: 0;
+            }
+            p {
+                font-size: 22px;
+                text-align: left;
+                animation: fade 0.5s 1 ease-out;
+                position: relative;
+            }
+
+            >* {
+                border-radius: 33px;
+                padding: 20px;
+                background: white;
+                box-shadow: 0px 0px 10px 5px #8b8b8b27;
+            }
+
+            .data {
+                margin: 30px;
+            }
         }
 
+        .skills {
+
+
+            ul {
+                margin: 0;
+                color: $black;
+                font-size: 26px;
+
+                li {
+                    animation: slideRight 0.5s 1 ease-out;
+                }
+            }
+
+            ul:first-of-type {
+                margin-bottom: 20px;
+            }
+
+            ul:last-of-type {
+                text-align: right;
+            }
+
+        }
+
+        .projects {}
     }
-
-
-
 }

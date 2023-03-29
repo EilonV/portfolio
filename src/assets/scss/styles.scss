@@ -14,9 +14,11 @@
 @import 'bgs/bg.scss';
 
 // CMPS
-@import 'components/_test.scss';
-@import 'components/_test2.scss';
-@import 'components/_test3.scss';
+@import 'components/header.scss';
+
+// ANIMATIONS
+@import 'animations/bg.scss';
+@import 'animations/text.scss';
 
 // PAGES
 @import 'views/_home.scss';

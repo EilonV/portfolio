@@ -4,6 +4,7 @@ import App from './root-cmp.jsx';
 import { HashRouter as Router } from 'react-router-dom'
 import { Provider } from 'react-redux';
 import { store } from './store/store.js';
+// import { Header } from './components/header'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

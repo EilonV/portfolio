@@ -1,35 +1,32 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { Test } from "../components/test"
-import { Test2 } from "../components/test2"
-import { Test3 } from "../components/test3"
 
 const initialState = {
     list: [
-        {
-            id: 'Zhg453sG',
-            name: 'Eilon',
-            age: '27'
-        },
 
+        {
+            id: makeId(),
+            att: 'about',
+            data: ['Hey i\'m Eilon (you\'re in my website!)', 'I am a creative person who enjoys coding, design and anything artistic.']
+        }
     ],
     list2: [
         {
-            id: '123',
-            name: 'DONK',
-            age: '27'
+            id: makeId(),
+            att: 'skills',
+            data: ['JavaScript', 'HTML', 'CSS', 'React', 'jQuery', 'Redux (Toolkit / Thunk)', 'SCSS', 'MongoDB', 'Beautiful DnD', 'NodeJS', 'Axios'],
+            personal: ['Team player', 'Ambitious', 'Strong work ethic', 'Friendly', 'Supportive']
         },
         {
-            id: '345Xyuu41',
-            name: 'Gaya',
-            age: '25'
+            id: makeId(),
+            att: 'projects'
         },
         {
-            id: 'LHs865ZX',
-            name: 'Luna',
-            age: '1'
+            id: makeId(),
+            att: 'contact'
         }
     ]
 }
+
 
 export const dndSlice = createSlice({
     name: 'dnd',
@@ -50,3 +47,12 @@ export const dndSlice = createSlice({
 export const { reorganize, reorganize2 } = dndSlice.actions
 
 export default dndSlice.reducer
+
+function makeId(length = 5) {
+    const possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
+    var txt = ''
+    for (var i = 0; i < length; i++) {
+        txt += possible.charAt(Math.floor(Math.random() * possible.length))
+    }
+    return txt
+}
