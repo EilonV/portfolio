@@ -1,11 +1,12 @@
 export const Header = () => {
+
     return <section className="header main-layout">
         <nav className="flex space-between">
-           
-                <p>sadasd</p>
-                <p>456456</p>
-                <p>3zxc</p>
-           
+
+            <p>1</p>
+            <p>2</p>
+            <p>3</p>
+
         </nav>
     </section>
 }

@@ -2,28 +2,51 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
     list: [
-
         {
             id: makeId(),
-            att: 'about',
-            data: ['Hey i\'m Eilon (you\'re in my website!)', 'I am a creative person who enjoys coding, design and anything artistic.']
+            att: 'projects',
+            data: [
+                {
+                    name: 'Animember',
+                    description: 'Anime information site',
+                    link: 'https://animember.netlify.app/',
+
+                },
+                {
+                    name: 'Fiverr',
+                    description: 'Fiverr clone (final project)',
+                    link: 'link',
+
+                },
+                {
+                    name: 'Meme generator',
+                    description: 'Basic generator made with js canvas',
+                    link: 'link',
+
+                },
+            ]
         }
+
     ],
     list2: [
         {
             id: makeId(),
+            att: 'contact',
+            data: [['github', 'https://github.com/EilonV'], ['linkedin', 'https://www.linkedin.com/in/eilonvana/'], ['facebook', 'https://www.facebook.com/dontmindmejustcleaninguphere/'], ['instagram', 'https://www.instagram.com/eilon_vana/'], ['email']]
+
+        },
+        {
+            id: makeId(),
+            att: 'about',
+            data: ['Hey i\'m Eilon (you\'re in my website!)', 'I am 27 from Gedera, Full stack developer and currently looking for work as a Front end developer.', 'I am a creative person who enjoys coding, design and anything artistic.']
+        },
+        {
+            id: makeId(),
             att: 'skills',
             data: ['JavaScript', 'HTML', 'CSS', 'React', 'jQuery', 'Redux (Toolkit / Thunk)', 'SCSS', 'MongoDB', 'Beautiful DnD', 'NodeJS', 'Axios'],
-            personal: ['Team player', 'Ambitious', 'Strong work ethic', 'Friendly', 'Supportive']
+            personal: ['Team player', 'Ambitious', 'Strong work ethic', 'Friendly']
         },
-        {
-            id: makeId(),
-            att: 'projects'
-        },
-        {
-            id: makeId(),
-            att: 'contact'
-        }
+
     ]
 }
 
@@ -34,16 +57,13 @@ export const dndSlice = createSlice({
     reducers: {
         reorganize: (state, action) => {
             state.list = action.payload
-            // console.log('ACTION PAYLOAD', action.payload);
         },
         reorganize2: (state, action) => {
             state.list2 = action.payload
-            // console.log('ACTION PAYLOAD', action.payload);
         },
     }
 })
 
-// Action creators are generated for each case reducer function
 export const { reorganize, reorganize2 } = dndSlice.actions
 
 export default dndSlice.reducer

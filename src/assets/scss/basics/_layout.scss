@@ -15,9 +15,9 @@
         @include layoutGTC($mobile-breakpoint);
     }
 
-    @include for-tablet-layout {
-        @include layoutGTC($tablet-breakpoint);
-    }
+    // @include for-tablet-layout {
+    //     @include layoutGTC($tablet-breakpoint);
+    // }
 
     @include for-wide-layout {
         @include layoutGTC($desktop-breakpoint);

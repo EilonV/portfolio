@@ -1,0 +1,11 @@
+@keyframes dnd {
+    to {
+        transform: translateX(-80%);
+    }
+}
+
+@keyframes link {
+    to{
+        transform: rotate(360deg);
+    }
+}

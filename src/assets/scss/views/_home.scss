@@ -26,6 +26,7 @@
             padding: 20px;
             border-radius: 24px;
         }
+
         // p {
         //     text-align: center;
         //     font-size: 40px;
@@ -69,11 +70,30 @@
 
     .dnd-container {
         gap: 30px;
+        position: relative;
+
+        .drag-gesture {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            justify-content: center;
+            align-items: center;
+
+            img {
+                // filter: blur(0.5px);
+                width: 40px;
+                transform: translateX(-50%);
+                animation: dnd 1s 3 forwards ease-in-out;
+
+                // animation: name duration timing-function delay iteration-count direction fill-mode;
+            }
+        }
     }
 
     .dragging-zone,
     .drop-zone {
         padding: 40px;
+        min-height: 80vh;
     }
 
     .dragging-zone {
@@ -107,10 +127,11 @@
         .about,
         .projects,
         .contact {
-            h1{
+            h1 {
                 text-align: left;
                 padding-left: 0;
             }
+
             p {
                 font-size: 22px;
                 text-align: left;
@@ -128,11 +149,10 @@
             .data {
                 margin: 30px;
             }
+
         }
 
         .skills {
-
-
             ul {
                 margin: 0;
                 color: $black;
@@ -151,8 +171,141 @@
                 text-align: right;
             }
 
+
+
         }
 
-        .projects {}
+        .about {
+
+            .data {
+                position: relative;
+            }
+
+            img {
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+                border-radius: 33px;
+                object-position: 0 -25px;
+                // right: 20px;
+                // top: 20px;
+                animation: fade 1s 1 0.3s forwards;
+                transition: 0.2s;
+                opacity: 0;
+
+                &:hover {
+                    transition: 0.2s;
+                    object-position: 0 65%;
+                }
+            }
+
+            p {
+                margin-bottom: 12px;
+            }
+        }
+
+        .contact {
+            h1 {
+                padding: 20px 20px 0px 20px;
+                text-align: center;
+            }
+
+            .data-contact {
+                padding: 20px;
+                gap: 10px;
+                justify-content: center;
+                transition: 0.2s;
+
+                a {
+                    background-size: 100% 100%;
+                    transition: 0.2s;
+                }
+
+                a:hover {
+                    transition: 0.2s;
+                    // animation: rotate 2s infinite linear;
+                    // background-color: gray;
+                    padding: 30px;
+                }
+
+                :nth-child(1) {
+                    background-image: url('../../pics/icons/github.svg');
+                    border-radius: 50%;
+                }
+
+                :nth-child(2) {
+                    background-image: url('../../pics/icons/linkedin.svg');
+                }
+
+                :nth-child(3) {
+                    background-image: url('../../pics/icons/facebook.svg');
+                    border-radius: 50%;
+
+                }
+
+                :nth-child(4) {
+                    background-image: url('../../pics/icons/instagram.svg');
+                }
+
+                :nth-child(5) {
+                    background-image: url('../../pics/icons/email.svg');
+                }
+
+            }
+
+            a {
+                min-height: 40px;
+                min-width: 40px;
+            }
+        }
+
+        .projects {
+            transition: 0.2s;
+
+            .data-projects {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+                transition: 0.2s;
+
+                p {
+                    font-size: 18px;
+                }
+
+                a {
+                    font-family: quicksand-b;
+                    font-size: 20px;
+                    background-color: $orange;
+                    border-radius: 33px;
+                    margin-top: 4px;
+                    img {
+                        width: 20px;
+                    }
+
+                    &:hover {
+                        img {
+                            animation: link 0.3s 1 forwards ease-in-out;
+                        }
+                    }
+
+                    &:visited {
+                        color: $black;
+                    }
+                }
+
+                .project {
+                    box-shadow: 0px 0px 10px 2px #8b8b8b27;
+                    border-radius: 33px;
+                    padding: 14px;
+                    position: relative;
+
+                    a {
+                        display: flex;
+                        justify-content: center;
+                    }
+
+                }
+            }
+        }
     }
 }
