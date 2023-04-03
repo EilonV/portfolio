@@ -111,9 +111,9 @@ export const Home = () => {
                                                                                 <h2>{project.name} </h2>
                                                                                 <p>{project.description}</p>
                                                                                 <a href={project.link} title={project.name} target='noopener'>
-                                                                                     
+                                                                                    visit&nbsp;
                                                                                     <img src={link} alt="" />
-                                                                                </a>
+                                                                                    </a>
                                                                                 {project.img && <img src={project.img} alt="" />}
 
                                                                             </div>
