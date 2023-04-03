@@ -2,12 +2,7 @@ import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd"
 import { useDispatch } from "react-redux"
 import { useSelector } from "react-redux"
 import { reorganize, reorganize2 } from '../slices/dndSlice'
-import facebook from '../assets/pics/icons/facebook.svg'
-import linkedin from '../assets/pics/icons/linkedin.svg'
-import github from '../assets/pics/icons/github.svg'
-import instagram from '../assets/pics/icons/instagram.svg'
-import email from '../assets/pics/icons/email.svg'
-import hand from '../assets/pics/hand.png'
+// import hand from '../assets/pics/hand.png'
 import me from '../assets/pics/me.JPG'
 import link from '../assets/pics/icons/link.svg'
 
@@ -15,27 +10,28 @@ export const Home = () => {
 
     const dispatch = useDispatch()
     const { list, list2 } = useSelector((state) => state.dnd)
-    const arr = [facebook, linkedin, github, instagram, email]
-    console.log(arr);
+
+    let newList = list.slice()
+    let newList2 = list2.slice()
 
     const handleOnDragEnd = (result) => {
-        let newList = list.slice()
-        let newList2 = list2.slice()
 
         if (result.destination) {
             // check if there is a block already in the big list and switches between them
             if (newList.length > 0 && result.destination.droppableId === 'newList') {
 
+                // console.log(result);
+                // handleEval(result.source.droppableId)
                 var placement = result.destination.index > 0 ? 0 : 1        //indicates the new index we need to splice
-                var deleted = eval(result.source.droppableId).splice(result.source.index, 1)
-                eval(result.destination.droppableId).splice(result.destination.index, 0, ...deleted)
-                var deleted2 = eval(result.destination.droppableId).splice([placement], 1)
-                eval(result.source.droppableId).splice(result.source.index, 0, ...deleted2)
+                var deleted = handleEval(result.source.droppableId).splice(result.source.index, 1)
+                handleEval(result.destination.droppableId).splice(result.destination.index, 0, ...deleted)
+                var deleted2 = handleEval(result.destination.droppableId).splice([placement], 1)
+                handleEval(result.source.droppableId).splice(result.source.index, 0, ...deleted2)
             }
             //inserts dragged item to either list
             else {
-                let deleted = eval(result.source.droppableId).splice(result.source.index, 1)
-                eval(result.destination.droppableId).splice(result.destination.index, 0, ...deleted)
+                let deleted = handleEval(result.source.droppableId).splice(result.source.index, 1)
+                handleEval(result.destination.droppableId).splice(result.destination.index, 0, ...deleted)
             }
 
             dispatch(reorganize(newList))
@@ -46,6 +42,20 @@ export const Home = () => {
     const handleEmail = (ev) => {
         ev.preventDefault()
         window.open('mailto:nttbms@gmail.com?subject=this-is-an-email&body=hello i am under the water');
+    }
+
+    const handleEval = (str) => {
+        // console.log(str);
+        switch (str) {
+            case 'newList':
+                return newList
+
+            case 'newList2':
+                return newList2
+
+            default:
+                break;
+        }
     }
 
     return <section className="home main-layout">
@@ -113,7 +123,7 @@ export const Home = () => {
                                                                                 <a href={project.link} title={project.name} target='noopener'>
                                                                                     visit&nbsp;
                                                                                     <img src={link} alt="" />
-                                                                                    </a>
+                                                                                </a>
                                                                                 {project.img && <img src={project.img} alt="" />}
 
                                                                             </div>
