@@ -2,7 +2,7 @@ import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd"
 import { useDispatch } from "react-redux"
 import { useSelector } from "react-redux"
 import { reorganize, reorganize2 } from '../slices/dndSlice'
-// import hand from '../assets/pics/hand.png'
+import hand from '../assets/pics/hand.png'
 import me from '../assets/pics/me.JPG'
 import link from '../assets/pics/icons/link.svg'
 
@@ -41,7 +41,7 @@ export const Home = () => {
 
     const handleEmail = (ev) => {
         ev.preventDefault()
-        window.open('mailto:nttbms@gmail.com?subject=this-is-an-email&body=hello i am under the water');
+        window.open('mailto:nttbms@gmail.com');
     }
 
     const handleEval = (str) => {
@@ -61,12 +61,7 @@ export const Home = () => {
     return <section className="home main-layout">
         <div className="dnd-container flex">
             <div className="drag-gesture flex column">
-                {/* <img src={hand} alt="" /> */}
-                {/* <img className="arrow" src={arrow} alt="" />
-                <div>
-                    <img className="drop" src={drop} alt="" />
-                    <img className="drag" src={drag} alt="" />
-                </div> */}
+                <img src={hand} alt="" />
             </div>
             <DragDropContext onDragEnd={handleOnDragEnd}>
 

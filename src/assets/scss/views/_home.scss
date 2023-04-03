@@ -78,13 +78,10 @@
             top: 50%;
             justify-content: center;
             align-items: center;
-
             img {
-                // filter: blur(0.5px);
                 width: 40px;
                 transform: translateX(-50%);
                 animation: dnd 1s 3 forwards ease-in-out;
-
                 // animation: name duration timing-function delay iteration-count direction fill-mode;
             }
         }
@@ -278,6 +275,7 @@
                     background-color: $orange;
                     border-radius: 33px;
                     margin-top: 4px;
+
                     img {
                         width: 20px;
                     }
