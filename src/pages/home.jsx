@@ -2,12 +2,21 @@ import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd"
 import { useDispatch } from "react-redux"
 import { useSelector } from "react-redux"
 import { reorganize, reorganize2 } from '../slices/dndSlice'
-import { Header } from '../components/header'
+import facebook from '../assets/pics/icons/facebook.svg'
+import linkedin from '../assets/pics/icons/linkedin.svg'
+import github from '../assets/pics/icons/github.svg'
+import instagram from '../assets/pics/icons/instagram.svg'
+import email from '../assets/pics/icons/email.svg'
+import hand from '../assets/pics/hand.png'
+import me from '../assets/pics/me.JPG'
+import link from '../assets/pics/icons/link.svg'
 
 export const Home = () => {
 
     const dispatch = useDispatch()
-    const { list, list2, list3 } = useSelector((state) => state.dnd)
+    const { list, list2 } = useSelector((state) => state.dnd)
+    const arr = [facebook, linkedin, github, instagram, email]
+    console.log(arr);
 
     const handleOnDragEnd = (result) => {
         let newList = list.slice()
@@ -34,8 +43,21 @@ export const Home = () => {
         }
     }
 
+    const handleEmail = (ev) => {
+        ev.preventDefault()
+        window.open('mailto:nttbms@gmail.com?subject=this-is-an-email&body=hello i am under the water');
+    }
+
     return <section className="home main-layout">
         <div className="dnd-container flex">
+            <div className="drag-gesture flex column">
+                {/* <img src={hand} alt="" /> */}
+                {/* <img className="arrow" src={arrow} alt="" />
+                <div>
+                    <img className="drop" src={drop} alt="" />
+                    <img className="drag" src={drag} alt="" />
+                </div> */}
+            </div>
             <DragDropContext onDragEnd={handleOnDragEnd}>
 
                 <Droppable droppableId="newList" type="ATTRIBUTE" >
@@ -68,6 +90,34 @@ export const Home = () => {
                                                                 <div className="data-about">
                                                                     {item.data.map((info) => {
                                                                         return <p>{info}</p>
+                                                                    })}
+                                                                    <img src={me} alt="pic of me" />
+                                                                </div>
+                                                            )}
+                                                            {item.att === 'contact' && (
+                                                                <div className="data-contact flex">
+                                                                    {item.data.map((link) => {
+                                                                        return (link[0] === 'email' ? <a href="/#" title={link[0]} onClick={handleEmail}> </a> :
+                                                                            <a href={link[1]} title={link[0]} target='noopener'> </a>
+                                                                        )
+                                                                    })}
+                                                                </div>
+                                                            )}
+                                                            {item.att === 'projects' && (
+                                                                <div className="data-projects">
+                                                                    {item.data.map((project) => {
+                                                                        return (
+                                                                            <div className={'project'.concat(' ' + project.name)}>
+                                                                                <h2>{project.name} </h2>
+                                                                                <p>{project.description}</p>
+                                                                                <a href={project.link} title={project.name} target='noopener'>
+                                                                                     
+                                                                                    <img src={link} alt="" />
+                                                                                </a>
+                                                                                {project.img && <img src={project.img} alt="" />}
+
+                                                                            </div>
+                                                                        )
                                                                     })}
                                                                 </div>
                                                             )}
