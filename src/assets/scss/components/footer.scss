@@ -1,0 +1,42 @@
+.footer {
+
+    font-family: Rubik;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    nav {
+        width: fit-content;
+        border-radius: 33px;
+        background: $white;
+        box-shadow: inset 7px 7px 14px #e0e0e0,
+            inset -7px -7px 14px white;
+        padding: 2px 10px;
+        align-items: center;
+        margin: auto;
+    }
+
+    li {
+        display: flex;
+        border-radius: 18px;
+        // background: $white;
+        // box-shadow: 7px 7px 14px #e0e0e0,
+        //     -7px -7px 14px white;
+        // // padding: 10px;
+        transition: 0.2s;
+        font-size: 20px;
+        margin: 0 10px;
+        filter: invert(85%);
+
+        img {
+            width: 50px;
+        }
+
+        &:hover {
+            cursor: pointer;
+            transform: translate(0px, -5px);
+            filter: invert(60%);
+
+        }
+    }
+}

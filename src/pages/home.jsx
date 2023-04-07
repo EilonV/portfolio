@@ -5,14 +5,32 @@ import { reorganize, reorganize2 } from '../slices/dndSlice'
 import hand from '../assets/pics/hand.png'
 import me from '../assets/pics/me.JPG'
 import link from '../assets/pics/icons/link.svg'
+import { useRef } from "react"
 
 export const Home = () => {
 
     const dispatch = useDispatch()
     const { list, list2 } = useSelector((state) => state.dnd)
+    const gestureRef = useRef(null);
 
     let newList = list.slice()
     let newList2 = list2.slice()
+
+    setTimeout(() => {
+        gestureRef.current.classList.add('active')
+    }, 1000);
+
+    setInterval(() => {
+        gestureRef.current.classList.add('active')
+    }, 25000);
+    setInterval(() => {
+        gestureRef.current.classList.remove('active')
+    }, 40000);
+
+    // let remove = setInterval(() => {
+    //     clearInterval(interval)
+    //     gestureRef.current.classList.remove('active')
+    // }, 6000);
 
     const handleOnDragEnd = (result) => {
 
@@ -60,7 +78,7 @@ export const Home = () => {
 
     return <section className="home main-layout">
         <div className="dnd-container flex">
-            <div className="drag-gesture flex column">
+            <div className="drag-gesture flex column" ref={gestureRef}>
                 <img src={hand} alt="" />
             </div>
             <DragDropContext onDragEnd={handleOnDragEnd}>

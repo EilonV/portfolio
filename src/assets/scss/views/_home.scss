@@ -1,7 +1,7 @@
 .home {
     background: $white;
     user-select: none;
-    margin-bottom: 20px;
+    padding: 30px 30px 20px 30px;
 
     .item {
         background-color: $white;
@@ -11,11 +11,10 @@
         justify-content: center;
         align-items: center;
         border-radius: 33px;
+        transition: 0.2s;
         box-shadow:
             2px 2px 7px rgba(0, 0, 0, 0.2),
             31px 31px 55px rgba(0, 0, 0, 0.02);
-
-        // animation: animatedBG 10s infinite forwards ease-in-out;
 
         h1 {
             text-align: center;
@@ -26,16 +25,6 @@
             padding: 20px;
             border-radius: 24px;
         }
-
-        // p {
-        //     text-align: center;
-        //     font-size: 40px;
-        //     font-weight: 700;
-        //     color: $black;
-        //     background: white;
-        //     padding: 10px;
-        //     border-radius: 24px;
-        // }
 
         &.about {
             background-position-x: 0%;
@@ -66,6 +55,9 @@
             animation: diagonalDown 4s infinite linear;
         }
 
+        &:hover {
+            transform: translate(0px, -10px);
+        }
     }
 
     .dnd-container {
@@ -78,11 +70,15 @@
             top: 50%;
             justify-content: center;
             align-items: center;
+            padding: 50px;
+            opacity: 0;
+
             img {
                 width: 40px;
-                transform: translateX(-50%);
-                animation: dnd 1s 3 forwards ease-in-out;
-                // animation: name duration timing-function delay iteration-count direction fill-mode;
+            }
+
+            &.active {
+                animation: dnd 1s 2 forwards ease-in-out;
             }
         }
     }
@@ -90,7 +86,8 @@
     .dragging-zone,
     .drop-zone {
         padding: 40px;
-        min-height: 80vh;
+        min-height: 78vh;
+
     }
 
     .dragging-zone {
@@ -216,13 +213,16 @@
                 a {
                     background-size: 100% 100%;
                     transition: 0.2s;
+                    width: 50px;
+                    height: 50px;
                 }
 
                 a:hover {
                     transition: 0.2s;
                     // animation: rotate 2s infinite linear;
                     // background-color: gray;
-                    padding: 30px;
+                    // padding: 30px;
+                    transform: scale(1.4);
                 }
 
                 :nth-child(1) {
@@ -265,16 +265,30 @@
                 gap: 10px;
                 transition: 0.2s;
 
+                .project {
+                    box-shadow: 0px 0px 10px 2px #8b8b8b27;
+                    border-radius: 33px;
+                    padding: 16px;
+                    position: relative;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 5px;
+                }
+
                 p {
                     font-size: 18px;
                 }
 
                 a {
+                    display: flex;
+                    justify-content: center;
                     font-family: quicksand-b;
                     font-size: 20px;
-                    background-color: $orange;
+                    background-color: $yellow;
                     border-radius: 33px;
                     margin-top: 4px;
+                    bottom: 0;
 
                     img {
                         width: 20px;
@@ -291,18 +305,7 @@
                     }
                 }
 
-                .project {
-                    box-shadow: 0px 0px 10px 2px #8b8b8b27;
-                    border-radius: 33px;
-                    padding: 14px;
-                    position: relative;
 
-                    a {
-                        display: flex;
-                        justify-content: center;
-                    }
-
-                }
             }
         }
     }
