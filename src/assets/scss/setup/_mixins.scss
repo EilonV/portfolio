@@ -7,7 +7,7 @@
 }
 
 @mixin for-tablet-layout {
-    @media (min-width: $tablet-breakpoint) {
+    @media (max-width: $tablet-breakpoint) {
         @content;
     }
 }

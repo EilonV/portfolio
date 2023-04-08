@@ -3,6 +3,10 @@
     user-select: none;
     padding: 30px 30px 20px 30px;
 
+    @include for-mobile-layout {
+        padding: 10px;
+    }
+
     .item {
         background-color: $white;
         height: 100%;
@@ -24,6 +28,17 @@
             background: white;
             padding: 20px;
             border-radius: 24px;
+        }
+
+        @include for-mobile-layout {
+            min-height: 50px;
+            min-width: 30%;
+
+            h1 {
+                font-size: 20px;
+                padding: 10px !important;
+            }
+
         }
 
         &.about {
@@ -81,6 +96,19 @@
                 animation: dnd 1s 2 forwards ease-in-out;
             }
         }
+
+        @include for-mobile-layout {
+            gap: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        @include for-tablet-layout {
+            gap: 10px;
+
+            display: flex;
+            flex-direction: column;
+        }
     }
 
     .dragging-zone,
@@ -88,6 +116,10 @@
         padding: 40px;
         min-height: 78vh;
 
+        @include for-mobile-layout {
+            padding: 20px;
+            min-height: 50vh;
+        }
     }
 
     .dragging-zone {
@@ -105,6 +137,11 @@
             padding: 20px;
         }
 
+        @include for-mobile-layout {
+            min-height: 20vh;
+            flex-direction: row;
+
+        }
     }
 
     .drop-zone {
@@ -123,7 +160,8 @@
         .contact {
             h1 {
                 text-align: left;
-                padding-left: 0;
+                padding-left: 5px;
+                font-size: 40px;
             }
 
             p {
@@ -135,13 +173,17 @@
 
             >* {
                 border-radius: 33px;
-                padding: 20px;
+                // padding: 20px;
                 background: white;
                 box-shadow: 0px 0px 10px 5px #8b8b8b27;
             }
 
             .data {
                 margin: 30px;
+
+                @include for-mobile-layout {
+                    margin: 20px;
+                }
             }
 
         }
@@ -210,11 +252,21 @@
                 justify-content: center;
                 transition: 0.2s;
 
+                @include for-mobile-layout {
+                    gap: 2px;
+
+                }
+
                 a {
                     background-size: 100% 100%;
                     transition: 0.2s;
                     width: 50px;
                     height: 50px;
+
+                    @include for-mobile-layout {
+                        width: 30px;
+                        height: 30px;
+                    }
                 }
 
                 a:hover {
@@ -265,6 +317,11 @@
                 gap: 10px;
                 transition: 0.2s;
 
+                @include for-mobile-layout {
+                    grid-template-columns: repeat(1, 1fr);
+
+                }
+
                 .project {
                     box-shadow: 0px 0px 10px 2px #8b8b8b27;
                     border-radius: 33px;
@@ -289,6 +346,7 @@
                     border-radius: 33px;
                     margin-top: 4px;
                     bottom: 0;
+                    color: $black;
 
                     img {
                         width: 20px;
@@ -304,8 +362,6 @@
                         color: $black;
                     }
                 }
-
-
             }
         }
     }

@@ -2,10 +2,10 @@ import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd"
 import { useDispatch } from "react-redux"
 import { useSelector } from "react-redux"
 import { reorganize, reorganize2 } from '../slices/dndSlice'
+import { useRef } from "react"
 import hand from '../assets/pics/hand.png'
 import me from '../assets/pics/me.JPG'
 import link from '../assets/pics/icons/link.svg'
-import { useRef } from "react"
 
 export const Home = () => {
 
@@ -26,11 +26,6 @@ export const Home = () => {
     setInterval(() => {
         gestureRef.current.classList.remove('active')
     }, 40000);
-
-    // let remove = setInterval(() => {
-    //     clearInterval(interval)
-    //     gestureRef.current.classList.remove('active')
-    // }, 6000);
 
     const handleOnDragEnd = (result) => {
 
@@ -63,7 +58,6 @@ export const Home = () => {
     }
 
     const handleEval = (str) => {
-        // console.log(str);
         switch (str) {
             case 'newList':
                 return newList
