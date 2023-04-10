@@ -15,13 +15,13 @@ const initialState = {
                 {
                     name: 'Fiverr',
                     description: 'Fiverr clone (final project)',
-                    link: 'link',
+                    link: 'https://react-reviews-vus7.onrender.com',
 
                 },
                 {
                     name: 'Meme generator',
                     description: 'Basic generator made with js canvas',
-                    link: 'link',
+                    link: 'https://eilonv.github.io/Meme-Generator/',
 
                 },
             ]

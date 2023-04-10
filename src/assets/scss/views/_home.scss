@@ -95,6 +95,15 @@
             &.active {
                 animation: dnd 1s 2 forwards ease-in-out;
             }
+
+            @include for-mobile-layout {
+                left: 25%;
+                top: 70%;
+
+                &.active {
+                    animation: dnd-mobile 1s 2 forwards ease-in-out;
+                }
+            }
         }
 
         @include for-mobile-layout {
