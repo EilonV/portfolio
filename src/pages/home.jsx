@@ -16,16 +16,16 @@ export const Home = () => {
     let newList = list.slice()
     let newList2 = list2.slice()
 
-    setTimeout(() => {
-        gestureRef.current.classList.add('active')
-    }, 1000);
+    // setTimeout(() => {
+    //     gestureRef.current.classList.add('active')
+    // }, 1000);
 
-    setInterval(() => {
-        gestureRef.current.classList.add('active')
-    }, 25000);
-    setInterval(() => {
-        gestureRef.current.classList.remove('active')
-    }, 40000);
+    // setInterval(() => {
+    //     gestureRef.current.classList.add('active')
+    // }, 25000);
+    // setInterval(() => {
+    //     gestureRef.current.classList.remove('active')
+    // }, 40000);
 
     const handleOnDragEnd = (result) => {
 

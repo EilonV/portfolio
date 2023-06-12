@@ -1,8 +1,8 @@
 .home {
     background: $white;
     user-select: none;
-    padding: 30px 30px 20px 30px;
-
+    padding: 20px 30px;
+    margin-top: 40px;
     @include for-mobile-layout {
         padding: 10px;
     }
@@ -189,7 +189,7 @@
 
             .data {
                 margin: 30px;
-
+                padding: 20px;
                 @include for-mobile-layout {
                     margin: 20px;
                 }

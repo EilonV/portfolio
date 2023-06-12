@@ -75,8 +75,13 @@
   &.space-between {
     justify-content: space-between;
   }
+
   &.space-around {
     justify-content: space-around;
+  }
+
+  &.space-evenly {
+    justify-content: space-evenly;
   }
 
   &.gap {
@@ -105,6 +110,6 @@
   font-weight: bold;
 }
 
-.w100{
+.w100 {
   width: 100%;
 }
