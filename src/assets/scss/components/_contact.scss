@@ -1,0 +1,84 @@
+.contact {
+    display: flex;
+    flex-direction: column;
+
+    ul {
+        height: 100%;
+        gap: 10px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+
+        li {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background-color: $clear-black;
+            height: 100%;
+            pointer-events: all;
+            border-radius: 10px;
+            transition: 0.3s;
+            overflow: hidden;
+            word-break: break-all;
+            padding: 0 20px;
+
+            &:hover {
+                background-color: $white;
+
+                i {
+                    opacity: 0;
+                    display: none;
+                }
+
+                p,
+                a {
+                    opacity: 1;
+                    display: block;
+                }
+            }
+
+
+            i {
+                &::before {
+                    font-size: 50px;
+                }
+            }
+
+            .fa-square-whatsapp {
+                &::before {
+                    font-size: 50px;
+                }
+            }
+
+            .fa-discord {
+                &::before {
+                    font-size: 50px;
+                }
+            }
+
+            a,
+            p {
+                // pointer-events: all;
+                font-weight: 700;
+                opacity: 0;
+                display: none;
+            }
+
+            p {
+                // padding: 0 20px;
+                // width: 100%;
+                text-align: center;
+
+            }
+
+            a {
+                color: $text-grey;
+                text-decoration: underline;
+                font-size: 24px;
+            }
+        }
+
+    }
+}

@@ -15,6 +15,16 @@
 
 // CMPS
 @import 'components/footer.scss';
+@import 'components/_me.scss';
+@import 'components/_skills.scss';
+@import 'components/_projects.scss';
+@import 'components/_bonus.scss';
+@import 'components/_contact.scss';
+@import 'components/_personal-skills.scss';
+@import 'components/_swiper.scss';
+@import 'components/_canvas.scss';
+@import 'components/_col.scss';
+
 
 // ANIMATIONS
 @import 'animations/bg.scss';
@@ -24,3 +34,4 @@
 
 // PAGES
 @import 'views/_home.scss';
+@import 'views/_spotlight.scss';

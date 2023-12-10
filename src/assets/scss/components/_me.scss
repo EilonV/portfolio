@@ -1,0 +1,30 @@
+.me {
+    img {
+        aspect-ratio: 1 / 1;
+        width: 100%;
+        filter: opacity(1);
+        max-width: 50%;
+        border-radius: 50%;
+        object-fit: cover;
+
+        // flip the image
+        -webkit-transform: scaleX(-1);
+        -moz-transform: scaleX(-1);
+        -o-transform: scaleX(-1);
+        transform: scaleX(-1);
+        filter: FlipH;
+        -ms-filter: "FlipH";
+    }
+
+    .me-data {
+        gap: 10px;
+        height: 100%;
+
+        @include for-tablet-layout {
+
+            flex-direction: column;
+
+        }
+    }
+
+}

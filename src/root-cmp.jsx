@@ -1,13 +1,13 @@
 import './assets/scss/styles.scss'
 import { Route, Routes } from 'react-router-dom'
-import { Home } from './pages/home'
 import { Footer } from './components/footer'
+import { Spotlight } from './pages/spotlight'
 
 function App() {
   return (
-    <div>
+    <div className='app'>
       <Routes>
-        <Route path='/' element={<Home />} />
+        <Route path='/' element={<Spotlight />} />
       </Routes>
       <Footer />
     </div >

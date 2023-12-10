@@ -1,0 +1,19 @@
+
+.skills {
+    display: flex;
+    flex-direction: column;
+
+    ol {
+        // display: grid;
+        // grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        padding: 0;
+        justify-content: space-evenly;
+        height: 100%;
+
+        li {
+            font-weight: 700;
+            margin: 1px 0;
+            font-size: 18px;
+        }
+    }
+}
