@@ -4,7 +4,6 @@
 
 html {
     font-family: quicksand;
-    // background-color: $white;
     transition: 0.1s;
     background-color: $yellow;
 
@@ -21,7 +20,8 @@ html {
         background-color: $dark;
 
         li,
-        h2 {
+        h2,
+        p {
             color: $text-grey;
         }
 
