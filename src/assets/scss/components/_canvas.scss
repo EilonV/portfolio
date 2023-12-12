@@ -3,5 +3,10 @@
     height: 100vh;
     width: 100%;
     pointer-events: all;
+
+    
+    @include for-tablet-layout{
+        display: none;
+    }
 }
 

@@ -8,6 +8,35 @@
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 
+        @include for-tablet-layout {
+            grid-template-columns: 1fr;
+
+            i {
+                transform: scale(0.7);
+                color: $white;
+            }
+
+            a,
+            p {
+                display: flex !important;
+                opacity: 1 !important;
+                color: $yellow !important;
+            }
+
+            li {
+                gap: 0 !important;
+                padding: 10px 0 !important;
+
+                &:hover {
+                    i,p,a{
+                        opacity: 1 !important;
+                        display: block !important;
+                    }
+                }
+            }
+
+        }
+
         li {
             width: 100%;
             display: flex;

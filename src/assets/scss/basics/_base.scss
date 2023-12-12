@@ -5,8 +5,52 @@
 html {
     font-family: quicksand;
     // background-color: $white;
-    background-color: $dark;
     transition: 0.1s;
+    background-color: $yellow;
+
+    h2 {
+        color: $black;
+    }
+
+    p,
+    li {
+        color: $black;
+    }
+
+    &.active {
+        background-color: $dark;
+
+        li,
+        h2 {
+            color: $text-grey;
+        }
+
+        // p,
+        // li {
+        //     color: $black;
+        // }
+
+        .canvas {
+            display: block;
+        }
+    }
+
+    .canvas {
+        display: none;
+    }
+
+    @include for-tablet-layout {
+        background-color: $yellow;
+
+        &.active {
+            background-color: $yellow;
+
+            .canvas {
+                display: none;
+            }
+        }
+    }
+
 }
 
 

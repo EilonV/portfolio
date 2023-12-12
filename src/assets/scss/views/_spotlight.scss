@@ -19,6 +19,10 @@
             h2 {
                 text-transform: uppercase;
                 font-size: 3rem;
+
+                @include for-tablet-layout {
+                    color: $black;
+                }
             }
 
             p {
@@ -38,16 +42,15 @@
         }
     }
 
-
-    // @include for-mobile-layout {
-    //     .row {
-    //         flex-direction: column;
-    //     }
-    // }
-
     @include for-tablet-layout {
         .row {
             flex-direction: column;
+        }
+    }
+
+    &.canvas-off {
+        .canvas {
+            animation: canvasOff 1s forwards ease-in-out;
         }
     }
 }
